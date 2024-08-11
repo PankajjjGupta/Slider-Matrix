@@ -1,7 +1,4 @@
 @media (max-width: 700px) {
-    body {
-        background-color: red;
-    }
     .matrix-container {
         width: 69%;
     }
