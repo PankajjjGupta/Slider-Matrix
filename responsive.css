@@ -10,4 +10,8 @@
     .matrix-container .y-axis {
         bottom: -15px;
     }
+
+    .matrix-container .x-axis .x-metadata {
+        margin-left: -40px;
+    }
 }
