@@ -1,0 +1,16 @@
+@media (max-width: 700px) {
+    body {
+        background-color: red;
+    }
+    .matrix-container {
+        width: 69%;
+    }
+
+    .matrix-container .x-axis {
+        left: -15px;
+    }
+
+    .matrix-container .y-axis {
+        bottom: -15px;
+    }
+}

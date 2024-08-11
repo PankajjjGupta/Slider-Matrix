@@ -55,7 +55,7 @@ input[type="range"] {
     position: relative;
     top: 0;
     height: 400px;
-    width: 30%;
+    width: 45%;
     margin: 10px auto 100px auto;
     border-left: 2px solid #000000;
     border-bottom: 2px solid #000000;
@@ -72,7 +72,7 @@ input[type="range"] {
     background-color: #EF8C34;
 }
 
-.matrix-container .x-axis .x-stats {
+.matrix-container .x-axis .x-metadata {
     margin-left: -50px;
 }
 
@@ -87,7 +87,7 @@ input[type="range"] {
     background-color: #F2BF50;
 }
 
-.matrix-container .y-axis .y-stats {
+.matrix-container .y-axis .y-metadata {
     margin: 20px 0;
 }
 
@@ -101,7 +101,7 @@ input[type="range"] {
     border-right: 5px solid transparent;
     border-bottom: 10px solid #EF8C34;
     background-color: transparent;
-    transform: translate(50%, -50%);
+    transform: translate(40%, -40%);
 }
 
 .matrix-container .y-axis::after {
@@ -115,7 +115,7 @@ input[type="range"] {
     border-bottom: 10px solid #F2BF50;
     rotate: 90deg;
     background-color: transparent;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -40%);
 }
 
 .point-label {
@@ -212,8 +212,10 @@ input[type="range"] {
 
 .add-btn-container {
     width: 50%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     /* background: #000; */
+    margin: 20px auto;
 }
 
 .add-btn-container #addRowBtn {
