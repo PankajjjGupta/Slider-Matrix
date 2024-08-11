@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: none;
+}
+
+tr th:first-child{
+    font-size: 30px;
+    width: 50%;
+}
+
+tr th:first-child div{
+    font-size: 30px;
+}
+
+th span {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    /* background-color: red; */
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid rgb(156, 156, 156);
+}
+
+input[type="range"] {
+    width: 80%;
+}
+
+.matrix-container {
+    position: relative;
+    height: 400px;
+    width: 30%;
+    margin: 20px auto;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.point-label {
+    position: absolute;
+    font-size: 12px;
+    color: #333;
+    transform: translate(-50%, -150%);
+}
+
+.point {
+    position: absolute;
+    background-color: orange;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+input[type="range"] {
+    height: 10px;
+    width: 80%;
+    -webkit-appearance: none;
+    background-color: #E8EDF3;
+    border-radius: 10px;
+}
+
+/* Ease Slider Thumb */
+.easeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #EF8C34; /* Yellowish color */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border-left: 2px solid white;
+    cursor: pointer;
+}
+
+.easeSlider::-moz-range-thumb {
+    background: #EF8C34;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.easeSlider::-ms-thumb {
+    background: #EF8C34;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Value Slider Thumb */
+.valueSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #F2BF50; /* Slightly different yellow */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border-left: 2px solid white;
+    cursor: pointer;
+}
+
+.valueSlider::-moz-range-thumb {
+    background: #F2BF50;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.valueSlider::-ms-thumb {
+    background: #F2BF50;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
