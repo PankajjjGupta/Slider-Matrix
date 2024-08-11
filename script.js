@@ -63,6 +63,25 @@ function validateIdeaInput(row) {
     return true;
 }
 
+function applySliderBackground(slider) {
+    const value = slider.value;
+    const min = slider.min ? slider.min : 0;
+    const max = slider.max ? slider.max : 100;
+    const percentage = ((value - min) / (max - min)) * 100;
+
+    // Determine the color based on the class
+    let sliderColor;
+    if (slider.classList.contains('easeSlider')) {
+        sliderColor = '#EF8C34';  // Original color for easeSlider
+    } else if (slider.classList.contains('valueSlider')) {
+        sliderColor = '#F2BF50';  // Original color for valueSlider
+    }
+
+    // Apply the gradient with the correct color
+    slider.style.background = `linear-gradient(to right, ${sliderColor} 0%, ${sliderColor} ${percentage}%, #E8EDF3 ${percentage}%, #E8EDF3 100%)`;
+}
+
+
 function addRow() {
     const rowCount = table.rows.length;
     if (rowCount < maxRows) {
@@ -73,27 +92,36 @@ function addRow() {
             <td><input type="range" class="valueSlider" min="0" max="10" value="0" step="0.01"></td>
         `;
         
-        const rowIndex = rowCount;  // Index for this new row
-        
+        // Apply the initial background to sliders
+        const easeSlider = newRow.querySelector('.easeSlider');
+        const valueSlider = newRow.querySelector('.valueSlider');
+        applySliderBackground(easeSlider);
+        applySliderBackground(valueSlider);
+
         // Attach event listeners to the new idea input field
         const ideaInput = newRow.querySelector('.ideaInput');
         ideaInput.addEventListener('input', function() {
             updatePoints();  // Update the points to reflect the new idea
         });
 
-        // Attach event listeners to the new sliders with validation
-        newRow.querySelector('.easeSlider').addEventListener('input', function() {
+        // Attach event listeners to the new sliders with validation and background update
+        easeSlider.addEventListener('input', function() {
             if (validateIdeaInput(newRow)) {
+                applySliderBackground(easeSlider);
                 updatePoints();
             } else {
                 this.value = 0; // Reset the slider value to 0 if validation fails
+                applySliderBackground(easeSlider);
             }
         });
-        newRow.querySelector('.valueSlider').addEventListener('input', function() {
+        
+        valueSlider.addEventListener('input', function() {
             if (validateIdeaInput(newRow)) {
+                applySliderBackground(valueSlider);
                 updatePoints();
             } else {
                 this.value = 0; // Reset the slider value to 0 if validation fails
+                applySliderBackground(valueSlider);
             }
         });
     }
@@ -106,6 +134,7 @@ function addRow() {
 table.querySelectorAll('.easeSlider, .valueSlider').forEach(slider => {
     slider.addEventListener('input', function() {
         const row = this.closest('tr');
+        console.log("Row ",row)
         const value = this.value;
         const min = this.min ? this.min : 0;
         const max = this.max ? this.max : 100;
@@ -113,6 +142,7 @@ table.querySelectorAll('.easeSlider, .valueSlider').forEach(slider => {
 
         // Determine the color based on the class
         let sliderColor;
+        console.log(this)
         if (this.classList.contains('easeSlider')) {
             sliderColor = '#EF8C34';  // Original color for easeSlider
         } else if (this.classList.contains('valueSlider')) {

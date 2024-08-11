@@ -13,12 +13,20 @@ table, th, td {
 }
 
 tr th:first-child{
-    font-size: 30px;
     width: 50%;
 }
 
-tr th:first-child div{
+.idea-text-label {
+    font-size: 25px;
+}
+
+.head-text {
     font-size: 30px;
+    font-weight: 700;
+}
+
+.slider-inp-container {
+    text-align: center;
 }
 
 th span {
@@ -45,11 +53,69 @@ input[type="range"] {
 
 .matrix-container {
     position: relative;
+    top: 0;
     height: 400px;
     width: 30%;
-    margin: 20px auto;
+    margin: 10px auto 100px auto;
     border-left: 2px solid #000000;
     border-bottom: 2px solid #000000;
+}
+
+.matrix-container .x-axis {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 2px;
+    left: -25px;
+    background-color: #EF8C34;
+}
+
+.matrix-container .x-axis .x-stats {
+    margin-left: -50px;
+}
+
+.matrix-container .y-axis {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -25px;
+    background-color: #F2BF50;
+}
+
+.matrix-container .y-axis .y-stats {
+    margin: 20px 0;
+}
+
+.matrix-container .x-axis::before {
+    position: absolute;
+    right: 0px;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #EF8C34;
+    background-color: transparent;
+    transform: translate(50%, -50%);
+}
+
+.matrix-container .y-axis::after {
+    position: absolute;
+    right: 0px;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #F2BF50;
+    rotate: 90deg;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
 }
 
 .point-label {
@@ -142,4 +208,29 @@ input[type="range"] {
     height: 15px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.add-btn-container {
+    width: 50%;
+    margin: 0 auto;
+    /* background: #000; */
+}
+
+.add-btn-container #addRowBtn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    background: transparent;
+    color: #000;
+    border: 2px solid #EF8C34;
+    cursor: pointer;
+}
+
+.text-primary {
+    color: #F2BF50;
+}
+
+.text-secondary {
+    color : #EF8C34
 }
