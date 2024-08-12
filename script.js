@@ -1,4 +1,4 @@
-const maxRows = 30;
+const maxRows = 26;
 const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
 const matrixContainer = document.getElementById('matrixContainer');
 const addRowBtn = document.getElementById('addRowBtn');
@@ -90,9 +90,19 @@ function addRow() {
         // Insert the idea input cell with the alphabet label
         const ideaCell = newRow.insertCell();
         ideaCell.style.position = "relative";
+
+        let label = '';
+        if (rowCount < 26) {
+            // For rows 0-25, use letters A-Z
+            label = String.fromCharCode(65 + rowCount);
+        } else {
+            // For rows beyond 25, use a custom label or stop labeling
+            label = ''; // Empty label, or implement custom logic here
+        }
+
         ideaCell.innerHTML = `
             <div class="label-formation">
-                ${String.fromCharCode(65 + rowCount)}
+                ${label}
             </div>
             <input type="text" class="ideaInput">
         `;
@@ -143,6 +153,7 @@ function addRow() {
         addRowBtn.disabled = true;
     }
 }
+
 
 
 
