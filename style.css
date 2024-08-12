@@ -293,3 +293,19 @@ input[type="range"] {
 .text-secondary {
     color: var(--secondary-color);
 }
+
+
+.th-pankaj::before {
+    position: absolute;
+    content: "A";
+    top: 0px;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+}
+
+.label-formation {
+    position: absolute;
+    left: -10px;
+    transform: translate(0px, 50%);
+}
