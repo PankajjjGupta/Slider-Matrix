@@ -30,7 +30,7 @@ tr th:first-child{
 }
 
 .head-text {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
 }
 
@@ -78,12 +78,17 @@ input[type="range"] {
     justify-content: space-between;
     height: 100%;
     width: 2px;
-    left: -25px;
-    background-color: var(--primary-color);
+    left: -20px;
+    background-color: var(--secondary-color);
 }
 
 .matrix-container .x-axis .x-metadata {
-    margin-left: -50px;
+    margin-left: -80px;
+    text-align: center;
+}
+
+.matrix-container .bold-div {
+    font-weight: bold;
 }
 
 .matrix-container .y-axis {
@@ -94,7 +99,7 @@ input[type="range"] {
     width: 100%;
     left: 0;
     bottom: -25px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .matrix-container .y-axis .y-metadata {
@@ -128,42 +133,46 @@ input[type="range"] {
     transform: translate(-40%, -40%);
 }
 
-
-
 x-legend-text {
     margin-left: -56px;
 }
 
-/* Priortity Zone Styles */
+/* Priority Styles */
+
 .priority-zone-container {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
+
 .priority-zone {
     position: absolute;
-    height: 500px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     background-color: transparent;
     border: 2px solid rgb(201, 201, 201);
     border-radius: 50%;
     /* rotate: 17deg; */
-    bottom: 150px;
-    left: 280px;
+    bottom: 50%;
+    left: 70%;
 }
 
 .priority-zone-b {
-    left: 185px;
-    bottom: 80px;
-    rotate: 15deg;
+    width: 600px;
+    height: 600px;
+    left: 43%;
+    bottom: 25%;
 }
 
 .priority-zone-c {
-    bottom: 27px;
-    left: 70px;
-    rotate: 45deg;
+    width: 800px;
+    height: 800px;
+    left: 15%;
+    bottom: 0%;
 }
+
 
 .point-label {
     position: absolute;
@@ -266,6 +275,7 @@ input[type="range"] {
 }
 
 .add-btn-container #addRowBtn {
+    text-align: center;
     height: 50px;
     width: 50px;
     border-radius: 50%;
