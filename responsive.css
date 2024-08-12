@@ -30,6 +30,10 @@
 
 
 @media (max-width: 430px) {
+    .priority-zone-b {
+        left: 39%;
+    }
+
     .priority-zone-c {
         left: 6%;
     }
