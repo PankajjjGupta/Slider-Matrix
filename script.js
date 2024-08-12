@@ -86,12 +86,25 @@ function addRow() {
     const rowCount = table.rows.length;
     if (rowCount < maxRows) {
         const newRow = table.insertRow();
-        newRow.innerHTML = `
-            <td><input type="text" class="ideaInput"></td>
-            <td><input type="range" class="easeSlider" min="0" max="10" value="0" step="0.01"></td>
-            <td><input type="range" class="valueSlider" min="0" max="10" value="0" step="0.01"></td>
+
+        // Insert the idea input cell with the alphabet label
+        const ideaCell = newRow.insertCell();
+        ideaCell.style.position = "relative";
+        ideaCell.innerHTML = `
+            <div class="label-formation">
+                ${String.fromCharCode(65 + rowCount)}
+            </div>
+            <input type="text" class="ideaInput">
         `;
-        
+
+        // Insert the ease slider cell
+        const easeSliderCell = newRow.insertCell();
+        easeSliderCell.innerHTML = '<input type="range" class="easeSlider" min="0" max="10" value="0" step="0.01">';
+
+        // Insert the value slider cell
+        const valueSliderCell = newRow.insertCell();
+        valueSliderCell.innerHTML = '<input type="range" class="valueSlider" min="0" max="10" value="0" step="0.01">';
+
         // Apply the initial background to sliders
         const easeSlider = newRow.querySelector('.easeSlider');
         const valueSlider = newRow.querySelector('.valueSlider');
@@ -130,6 +143,8 @@ function addRow() {
         addRowBtn.disabled = true;
     }
 }
+
+
 
 table.querySelectorAll('.easeSlider, .valueSlider').forEach(slider => {
     slider.addEventListener('input', function() {
