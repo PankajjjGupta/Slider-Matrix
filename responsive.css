@@ -1,7 +1,7 @@
 @media (max-width: 700px) {
-    .matrix-container {
-        width: 69%;
-    }
+        .matrix-container {
+            width: 69%;
+        }
 
     .matrix-container .x-axis {
         left: -15px;
@@ -16,25 +16,58 @@
     }
 }
 
-
-@media (max-width: 360px) {
-    .matrix-container {
-        width: 90%;
-    }
-
-    .matrix-container .x-axis .x-metadata {
-        margin-left: -15px;
-        rotate: -90deg;
+@media (max-width: 560px) {
+    .priority-zone-c {
+        left: 7%;
+        bottom: 4%;
     }
 }
 
+@media (max-width: 514px) {
+    .priority-zone-c {
+        left: 9%;
+        bottom: 3%;
+    }
+}
 
-@media (max-width: 430px) {
-    .priority-zone-b {
-        left: 39%;
+@media (max-width: 457px) {
+    .matrix-container .x-axis .x-metadata {
+        rotate: -90deg;
+    }
+    .priority-zone {
+        bottom: 50%;
     }
 
+    .priority-zone-b {
+        left: 33%;
+        bottom: 25%;
+    }
     .priority-zone-c {
-        left: 6%;
+        left: 8%;
+        bottom: -1%;
+    }
+}
+
+@media (max-width: 378px) {
+    .priority-zone {
+        bottom: 49%;
+        left: 70%;
+    }
+        
+    .priority-zone-b {
+            left: 40%;
+            bottom: 20%;
+    }
+        
+    .priority-zone-c {
+        left: 10%;
+        bottom: -6%;
+    }
+}
+
+@media (max-width: 320px) {    
+    .priority-zone-c {
+        left: 10%;
+        bottom: -11%;
     }
 }
